@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn AI Connect Assistant",
+    "version": "1.0",
+    "description": "Automatically generates a personalized message when connecting with someone on LinkedIn using AI.",
+    "permissions": ["scripting", "activeTab", "storage"],
+    "host_permissions": ["https://www.linkedin.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/in/*"],
+        "js": ["config.js", "content.js"]
+    }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icon16.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      }
+    }
+    
+  }
+  
